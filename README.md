@@ -1,6 +1,6 @@
 # cfx_cleaner
 
-## A Cache Cleaner for FiveM and/or RedM
+### A Cache Cleaner for FiveM and/or RedM
 
 I was bored and needed to clean out my RedM cache and always forget which folders I can remove to clear it.  I figured today was the day I learn some C# and make it an app.
 
