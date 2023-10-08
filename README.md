@@ -11,6 +11,6 @@ Simple and easy to use!
 
 ![screenshot]
 
-[screenshot]: https://i.imgur.com/8i5oNol.png "Screenshot"
+[screenshot]: [https://i.imgur.com/8i5oNol.png](https://i.imgur.com/rw6nat8.png) "Screenshot"
 
 Click either FiveM or RedM to clean the respective cache.
