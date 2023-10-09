@@ -4,24 +4,16 @@
              xmlns:local="clr-namespace:cfx_cleaner_wpf"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <ControlTemplate x:Key="NoHoverEffect_Template"   
-                 TargetType="Button">
-            <Border Background="{TemplateBinding Background}"  
-          BorderBrush="{TemplateBinding BorderBrush}"  
-          BorderThickness="{TemplateBinding BorderThickness}">
-                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"  
-                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+        <ControlTemplate x:Key="NoHoverEffect_Template" TargetType="Button">
+            <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
             </Border>
             <ControlTemplate.Triggers>
-                <Trigger Property="IsEnabled"  
-             Value="False">
-                    <Setter Property="Background"  
-              Value="{x:Static SystemColors.ControlLightBrush}" />
-                    <Setter Property="Foreground"  
-              Value="{x:Static SystemColors.GrayTextBrush}" />
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Background" Value="{x:Static SystemColors.ControlLightBrush}" />
+                    <Setter Property="Foreground" Value="{x:Static SystemColors.GrayTextBrush}" />
                 </Trigger>
             </ControlTemplate.Triggers>
-            
         </ControlTemplate>
         <Style x:Key="WindowMainPanelStyle" TargetType="{x:Type Border}">
             <Setter Property="BorderBrush" Value="Black" />
@@ -40,18 +32,8 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
-                        <Border
-					x:Name="border"
-					Background="Transparent"
-					BorderThickness="0"
-					SnapsToDevicePixels="true">
-                            <ContentPresenter
-						x:Name="contentPresenter"
-						Margin="0"
-						HorizontalAlignment="Center"
-						VerticalAlignment="Center"
-						Focusable="False"
-						RecognizesAccessKey="True" />
+                        <Border x:Name="border" Background="Transparent" BorderThickness="0" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center" Focusable="False" RecognizesAccessKey="True" />
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="true">
@@ -65,7 +47,6 @@
                 </Setter.Value>
             </Setter>
         </Style>
-
         <Style x:Key="TitleBarCloseButtonStyle" TargetType="Button">
             <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
             <Setter Property="Padding" Value="0" />
@@ -74,18 +55,8 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
-                        <Border
-					x:Name="border"
-					Background="Transparent"
-					BorderThickness="0"
-					SnapsToDevicePixels="true">
-                            <ContentPresenter
-						x:Name="contentPresenter"
-						Margin="0"
-						HorizontalAlignment="Center"
-						VerticalAlignment="Center"
-						Focusable="False"
-						RecognizesAccessKey="True" />
+                        <Border x:Name="border" Background="Transparent" BorderThickness="0" SnapsToDevicePixels="true"> 
+                            <ContentPresenter x:Name="contentPresenter" Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center" Focusable="False" RecognizesAccessKey="True" />
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="true">

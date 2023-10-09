@@ -30,19 +30,8 @@
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
-                <Image
-		Grid.Column="0"
-		Width="22"
-		Height="22"
-		Margin="4,5,4,5"
-		Source="/logo.png" Grid.RowSpan="2" />
-                <TextBlock
-		Grid.Column="1"
-		Margin="4,0,0,0"
-		VerticalAlignment="Center"
-		FontSize="14"
-		Foreground="#FFD6D6D6"
-		>
+                <Image Grid.Column="0" Width="22" Height="22" Margin="4,5,4,5" Source="/logo.png" Grid.RowSpan="2" />
+                <TextBlock Grid.Column="1" Margin="4,0,0,0" VerticalAlignment="Center" FontSize="14" Foreground="#FFD6D6D6">
                     <TextBlock.Style>
                         <Style TargetType="{x:Type TextBlock}">
                             <Style.Triggers>
@@ -51,32 +40,12 @@
                                 </DataTrigger>
                             </Style.Triggers>
                         </Style>
-                    </TextBlock.Style><Run Text="CFX Cache Cleaner - 2.0"/><Run Language="en-ca" Text=".1"/></TextBlock>
-
-                <Button x:Name="Minimize"
-		Grid.Column="2"
-		Click="OnMinimizeButtonClick"
-		RenderOptions.EdgeMode="Aliased"
-		Style="{StaticResource TitleBarButtonStyle}" Grid.RowSpan="2">
-                    <Path
-			Width="46"
-			Height="32"
-			Data="M 18,15 H 28"
-			Stroke="{Binding Path=Foreground,
-							 RelativeSource={RelativeSource AncestorType={x:Type Button}}}"
-			StrokeThickness="1" />
+                    </TextBlock.Style><Run Text="CFX Cache Cleaner - "/><Run Text="v"/><Run Text="2.0"/><Run Text=".2"/></TextBlock>
+                <Button x:Name="Minimize" Grid.Column="2" Click="OnMinimizeButtonClick" RenderOptions.EdgeMode="Aliased" Style="{StaticResource TitleBarButtonStyle}" Grid.RowSpan="2">
+                    <Path Width="46" Height="32" Data="M 18,15 H 28" Stroke="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType={x:Type Button}}}" StrokeThickness="1" />
                 </Button>
-                <Button x:Name="WindowClose"
-		Grid.Column="3"
-		Click="OnCloseButtonClick"
-		Style="{StaticResource TitleBarCloseButtonStyle}" Grid.RowSpan="2" Margin="0,0,-46,0" Foreground="White">
-                    <Path
-			Width="46"
-			Height="32"
-			Data="M 18,11 27,20 M 18,20 27,11"
-			Stroke="{Binding Path=Foreground,
-							 RelativeSource={RelativeSource AncestorType={x:Type Button}}}"
-			StrokeThickness="1" />
+                <Button x:Name="WindowClose" Grid.Column="3" Click="OnCloseButtonClick" Style="{StaticResource TitleBarCloseButtonStyle}" Grid.RowSpan="2" Margin="0,0,-46,0" Foreground="White">
+                    <Path Width="46" Height="32" Data="M 18,11 27,20 M 18,20 27,11" Stroke="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType={x:Type Button}}}" StrokeThickness="1" />
                 </Button>
             </Grid>
             <TextBlock x:Name="TitleText" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" Height="72" Width="274" Grid.RowSpan="2" Canvas.Left="126" Canvas.Top="38" Text="Instructions&#xD;&#xA;1: Click either FivM or RedM below&#xD;&#xA;2: Wait..." FontSize="16"/>
@@ -107,4 +76,3 @@
         </Canvas>
     </Border>
 </Window>
-
