@@ -14,6 +14,7 @@
     <IncludeSymbols>False</IncludeSymbols>
     <ApplicationIcon>logo.ico</ApplicationIcon>
     <ApplicationManifest>app.manifest</ApplicationManifest>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
   </PropertyGroup>
 
   <ItemGroup>
