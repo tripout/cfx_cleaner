@@ -1,4 +1,4 @@
-
+[![.NET](https://github.com/tripout/cfx_cleaner/actions/workflows/dotnet.yml/badge.svg)](https://github.com/tripout/cfx_cleaner/actions/workflows/dotnet.yml)
 # cfx_cleaner
 
 ### A Cache Cleaner for FiveM and/or RedM
