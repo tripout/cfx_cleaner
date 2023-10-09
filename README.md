@@ -9,8 +9,6 @@ Well... I present to you the CFX Cache Cleaner.
 
 Simple and easy to use!
 
-![screenshot]
-
-[screenshot]: https://i.imgur.com/rw6nat8.png "Screenshot"
+![screenshot](https://i.imgur.com/g1J4uIA.png)
 
 Click either FiveM or RedM to clean the respective cache.
