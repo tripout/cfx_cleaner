@@ -13,13 +13,24 @@
     <RepositoryType>git</RepositoryType>
     <IncludeSymbols>False</IncludeSymbols>
     <ApplicationIcon>logo.ico</ApplicationIcon>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="fivem_logo.png" />
+    <None Remove="redm_logo.png" />
+  </ItemGroup>
 
   <ItemGroup>
     <Content Include="logo.ico" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="redm_logo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="fivem_logo.png" />
     <Resource Include="logo.png" />
   </ItemGroup>
 

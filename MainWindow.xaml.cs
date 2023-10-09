@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -9,6 +10,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Interop;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
@@ -21,13 +23,22 @@ namespace cfx_cleaner_wpf
     /// </summary>
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
             InitializeComponent();
         }
+        private void OnMinimizeButtonClick(object sender, EventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
+        private void OnCloseButtonClick(object sender, EventArgs E)
+        {
+            Close();
+        }
         private void Beaver_Logo_Click(object sender, RoutedEventArgs e)
         {
-            var destinationurl = "https://tripout.tech/";
+            var destinationurl = "https://tripout.tech/cleaner";
             var sInfo = new System.Diagnostics.ProcessStartInfo(destinationurl)
             {
                 UseShellExecute = true,
@@ -41,11 +52,11 @@ namespace cfx_cleaner_wpf
                 Mouse.OverrideCursor = Cursors.Wait;
             });
             string fivem_appdata = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\AppData\\Local\\FiveM\\FiveM.app\\data\\";
-            if (Directory.Exists(fivem_appdata))
+            string fivem_cache = fivem_appdata + "\\cache\\";
+            string fivem_server_cache = fivem_appdata + "\\server-cache\\";
+            string fivem_server_priv = fivem_appdata + "\\server-cache-priv\\";
+            if ((Directory.Exists(fivem_appdata)) && (Directory.Exists(fivem_cache)) && (Directory.Exists(fivem_server_cache)) && (Directory.Exists(fivem_server_priv)))
             {
-                string fivem_cache = fivem_appdata + "\\cache\\";
-                string fivem_server_cache = fivem_appdata + "\\server-cache\\";
-                string fivem_server_priv = fivem_appdata + "\\server-cache-priv\\";
                 DirectoryInfo cache_info = new DirectoryInfo(fivem_cache);
                 DirectoryInfo server_info = new DirectoryInfo(fivem_server_cache);
                 DirectoryInfo server_priv_info = new DirectoryInfo(fivem_server_priv);
@@ -69,7 +80,7 @@ namespace cfx_cleaner_wpf
             }
             else
             {
-                string messageBoxText = "Error, Cannot Find FiveM Application Directory!";
+                string messageBoxText = "Error, Cannot Find All FiveM Folders To Clean!";
                 string caption = "FiveM Cache Cleaner Error";
                 MessageBoxButton button = MessageBoxButton.OK;
                 MessageBoxImage icon = MessageBoxImage.Error;
@@ -88,11 +99,11 @@ namespace cfx_cleaner_wpf
                 Mouse.OverrideCursor = Cursors.Wait;
             });
             string redm_appdata = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\AppData\\Local\\RedM\\RedM.app\\data\\";
-            if (Directory.Exists(redm_appdata))
+            string redm_cache = redm_appdata + "\\cache\\";
+            string redm_server_cache = redm_appdata + "\\server-cache\\";
+            string redm_server_priv = redm_appdata + "\\server-cache-priv\\";
+            if ((Directory.Exists(redm_appdata)) && (Directory.Exists(redm_cache)) && (Directory.Exists(redm_server_cache)) && (Directory.Exists(redm_server_priv)))
             {
-                string redm_cache = redm_appdata + "\\cache\\";
-                string redm_server_cache = redm_appdata + "\\server-cache\\";
-                string redm_server_priv = redm_appdata + "\\server-cache-priv\\";
                 DirectoryInfo cache_info = new DirectoryInfo(redm_cache);
                 DirectoryInfo server_info = new DirectoryInfo(redm_server_cache);
                 DirectoryInfo server_priv_info = new DirectoryInfo(redm_server_priv);
@@ -116,7 +127,7 @@ namespace cfx_cleaner_wpf
             }
             else
             {
-                string messageBoxText = "Error, Cannot Find RedM Application Directory!";
+                string messageBoxText = "Error, Cannot Find All RedM Folders To Clean";
                 string caption = "RedM Cache Cleaner Error";
                 MessageBoxButton button = MessageBoxButton.OK;
                 MessageBoxImage icon = MessageBoxImage.Error;

@@ -5,12 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:cfx_cleaner_wpf"
         mc:Ignorable="d"
-        Title="CFX Cache Cleaner" Height="145" Width="348" Icon="/logo.png" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" BorderBrush="Black" HorizontalAlignment="Center" VerticalAlignment="Center">
+        Title="CFX Cache Cleaner" Height="270" Width="527" Icon="/logo.png" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" BorderBrush="Black" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="32" ResizeBorderThickness="{x:Static SystemParameters.WindowResizeBorderThickness}" />
+    </WindowChrome.WindowChrome>
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
             <GradientStop Color="Black" Offset="1"/>
-            <GradientStop Color="Red" Offset="0"/>
-            <GradientStop Color="#FF560000" Offset="0.388"/>
+            <GradientStop Color="Red" Offset="0.258"/>
+            <GradientStop Color="#FF560000" Offset="0.814"/>
+            <GradientStop Color="{DynamicResource {x:Static SystemColors.InactiveCaptionTextColorKey}}" Offset="0.074"/>
         </LinearGradientBrush>
     </Window.Background>
     <Border Style="{StaticResource WindowMainPanelStyle}">
@@ -102,3 +107,4 @@
         </Canvas>
     </Border>
 </Window>
+
