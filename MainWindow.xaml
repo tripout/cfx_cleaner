@@ -13,30 +13,92 @@
             <GradientStop Color="#FF560000" Offset="0.388"/>
         </LinearGradientBrush>
     </Window.Background>
+    <Border Style="{StaticResource WindowMainPanelStyle}">
+        <Canvas>
+            <Grid HorizontalAlignment="Left" VerticalAlignment="Center" Width="478">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="9*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Image
+		Grid.Column="0"
+		Width="22"
+		Height="22"
+		Margin="4,5,4,5"
+		Source="/logo.png" Grid.RowSpan="2" />
+                <TextBlock
+		Grid.Column="1"
+		Margin="4,0,0,0"
+		VerticalAlignment="Center"
+		FontSize="14"
+		Foreground="#FFD6D6D6"
+		>
+                    <TextBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsActive, RelativeSource={RelativeSource AncestorType={x:Type Window}}}" Value="False">
+                                    <Setter Property="Foreground" Value="Gray" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style><Run Text="CFX Cache Cleaner - 2.0"/><Run Language="en-ca" Text=".1"/></TextBlock>
 
-    <Grid Margin="10,0,10,10" Width="325" Height="120" HorizontalAlignment="Center" VerticalAlignment="Center">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="13*"/>
-            <RowDefinition Height="106*"/>
-        </Grid.RowDefinitions>
-        <TextBlock x:Name="TitleText" HorizontalAlignment="Left" Margin="17,10,0,0" TextWrapping="Wrap" Text="CFX Cache Cleaner (FiveM/RedM)" VerticalAlignment="Top" Foreground="White" Height="31" Width="308" FontSize="20" Grid.RowSpan="2"/>
-        <Button x:Name="FiveM_Button" Content="Clean FiveM Cache" HorizontalAlignment="Left" Margin="10,33,0,0" VerticalAlignment="Top" Height="55" Width="125" FontSize="14" Click="FiveM_Button_Click" Background="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" Cursor="Hand" Grid.Row="1">
-            <Button.Effect>
-                <DropShadowEffect/>
-            </Button.Effect>
-        </Button>
-        <Button x:Name="RedM_Button" Content="Clean RedM Cache" HorizontalAlignment="Left" Margin="193,33,0,0" VerticalAlignment="Top" Height="55" Width="129" FontSize="14" Click="RedM_Button_Click" Background="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" Cursor="Hand" Grid.Row="1">
-            <Button.Effect>
-                <DropShadowEffect/>
-            </Button.Effect>
-        </Button>
-        <Button x:Name="Beaver_Logo_Button" Content="" HorizontalAlignment="Left" Margin="149,44,0,0" VerticalAlignment="Top" Width="34" Height="34" Cursor="Help" Click="Beaver_Logo_Click" BorderBrush="{x:Null}" Grid.Row="1" Foreground="{x:Null}" Template="{StaticResource NoHoverEffect_Template}">
-            <Button.Background>
-                <ImageBrush Stretch="UniformToFill" ImageSource="/logo.png"/>
-            </Button.Background>
-            <Button.Effect>
-                <DropShadowEffect/>
-            </Button.Effect>
-        </Button>
-    </Grid>
+                <Button x:Name="Minimize"
+		Grid.Column="2"
+		Click="OnMinimizeButtonClick"
+		RenderOptions.EdgeMode="Aliased"
+		Style="{StaticResource TitleBarButtonStyle}" Grid.RowSpan="2">
+                    <Path
+			Width="46"
+			Height="32"
+			Data="M 18,15 H 28"
+			Stroke="{Binding Path=Foreground,
+							 RelativeSource={RelativeSource AncestorType={x:Type Button}}}"
+			StrokeThickness="1" />
+                </Button>
+                <Button x:Name="WindowClose"
+		Grid.Column="3"
+		Click="OnCloseButtonClick"
+		Style="{StaticResource TitleBarCloseButtonStyle}" Grid.RowSpan="2" Margin="0,0,-46,0" Foreground="White">
+                    <Path
+			Width="46"
+			Height="32"
+			Data="M 18,11 27,20 M 18,20 27,11"
+			Stroke="{Binding Path=Foreground,
+							 RelativeSource={RelativeSource AncestorType={x:Type Button}}}"
+			StrokeThickness="1" />
+                </Button>
+            </Grid>
+            <TextBlock x:Name="TitleText" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" Height="72" Width="274" Grid.RowSpan="2" Canvas.Left="126" Canvas.Top="38" Text="Instructions&#xD;&#xA;1: Click either FivM or RedM below&#xD;&#xA;2: Wait..." FontSize="16"/>
+            <Button x:Name="FiveM_Button" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Height="125" Width="150" FontSize="14" Click="FiveM_Button_Click" Cursor="Hand" Grid.Row="1" Canvas.Left="37" Canvas.Top="110" FontWeight="ExtraBlack">
+                <Button.Background>
+                    <ImageBrush ImageSource="/fivem_logo.png" Stretch="UniformToFill"/>
+                </Button.Background>
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="RedM_Button" Content="" HorizontalAlignment="Left" VerticalAlignment="Center" Height="125" Width="150" FontSize="14" Click="RedM_Button_Click" Cursor="Hand" Grid.Row="1" Canvas.Left="328" Canvas.Top="110">
+                <Button.Background>
+                    <ImageBrush ImageSource="/redm_logo.png" Stretch="UniformToFill"/>
+                </Button.Background>
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="Beaver_Logo_Button" Content="" HorizontalAlignment="Center" VerticalAlignment="Top" Width="52" Height="52" Cursor="Help" Click="Beaver_Logo_Click" BorderBrush="{x:Null}" Grid.Row="1" Foreground="{x:Null}" Template="{StaticResource NoHoverEffect_Template}" Canvas.Left="236" Canvas.Top="142">
+                <Button.Background>
+                    <ImageBrush Stretch="UniformToFill" ImageSource="/logo.png"/>
+                </Button.Background>
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+            </Button>
+        </Canvas>
+    </Border>
 </Window>
